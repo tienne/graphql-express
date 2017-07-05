@@ -106,3 +106,7 @@ fabric.properties
 
 server/dist
 server/dist/*
+.idea/graphql-express.iml
+.idea/modules.xml
+.idea/php.xml
+.idea/vcs.xml
