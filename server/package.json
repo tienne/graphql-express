@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.spec.ts' --exec 'ts-node' src/server.ts"
   },
   "repository": {
     "type": "git",
@@ -22,9 +22,11 @@
     "graphql": "^0.10.3",
     "graphql-server-express": "^1.0.0",
     "graphql-tools": "^1.1.0",
-    "mysql": "^2.13.0"
+    "mysql": "^2.13.0",
+    "typeorm": "^0.1.0-alpha.28"
   },
   "devDependencies": {
+    "ts-node": "^3.1.0",
     "typescript": "^2.4.1"
   }
 }
