@@ -23,4 +23,5 @@ export default async function startServer(option: serverOption = {isDev: false, 
   app.use('/graphiql', ensureAuthenticated, graphiqlExpress({endpointURL: '/graphql'}));
 
   return app;
+
 }
