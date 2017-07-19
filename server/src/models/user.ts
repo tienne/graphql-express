@@ -11,7 +11,7 @@ export default class User {
     public username: string;
 
     @Column()
-    private password: string;
+    public password: string;
     public setPassword = (pw: string) => this.password = pw;
 
     /**

@@ -1,5 +1,6 @@
 import {Connection} from 'typeorm';
 import getServer from './server';
+import buildGraphQLRouteHandler from './graphql';
 import {getConnection} from './models';
 import {graphiqlExpress} from 'graphql-server-express';
 import {ensureAuthenticated} from './auth';
@@ -17,7 +18,7 @@ export default async function startServer(option: serverOption = {isDev: false, 
   const app = await getServer(connection, option.isDev);
 
   // Adds Enviornment variables from .enviornment
-  const env = (option.isDev && 'development') || (option.isTest && 'test') || 'production'
+  const env = (option.isDev && 'development') || (option.isTest && 'test') || 'production';
 
   app.use('/graphql', ensureAuthenticated, buildGraphQLRouteHandler());
   app.use('/graphiql', ensureAuthenticated, graphiqlExpress({endpointURL: '/graphql'}));

@@ -1,4 +1,5 @@
 import 'reflect-metadata';
+import User from './user';
 import { createConnection, Connection, ConnectionOptions} from 'typeorm';
 import {yellow, red} from 'chalk';
 
@@ -14,7 +15,9 @@ export async function getConnection (options: object = null, enableLogging: bool
       port: '3306',
       username: 'root',
       password: 'admin',
-      entities: [],
+      entities: [
+        User
+      ],
       autoSchemaSync: true
     };
 
